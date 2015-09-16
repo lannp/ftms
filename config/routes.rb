@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   resources :courses do
     resources :user_subjects, only: :show
   end
+
+  namespace :supervisor do
+    root "subjects#index"
+    resources :subjects
+  end
 end

@@ -40,3 +40,14 @@ en:
     update: "Update done task"
   subjects:
     subject: "Subject"
+  supervisor:
+    subject:
+      new_subject: "New Subject"
+      enter_name: "Name"
+      enter_description: "Description"
+      tasks: "Tasks"
+      create_subject: "Create Subject"
+      name: "Name"
+      description: "Description"
+      add_other_task: "Add Task"
+      remove_task: "Remove Task"

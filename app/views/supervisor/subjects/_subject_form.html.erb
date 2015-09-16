@@ -1,0 +1,31 @@
+<%= form_for [:supervisor, @subject] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="input-group col-md-12">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control",
+      placeholder: t("supervisor.subject.enter_name") %>
+  </div>
+
+  <div class="input-group col-md-12">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control",
+      placeholder: t("supervisor.subject.enter_description") %>
+  </div>
+
+  <div class="input-group col-md-12">
+    <%= f.label :tasks %>
+  </div>
+
+  <div class="input-group col-md-12">   
+    <%= f.fields_for :tasks do |builder| %>
+      <%= render "task_fields", f: builder %>
+    <% end %>
+  </div>
+
+  <p><%= link_to_add_fields t("supervisor.subject.add_other_task"), f, :tasks %></p>
+
+  <div class="input-group col-md-12">
+    <%= f.submit t("supervisor.subject.create_subject"), class: "btn btn-primary btn-block" %>
+  </div>
+  <br><br>
+<% end %>
