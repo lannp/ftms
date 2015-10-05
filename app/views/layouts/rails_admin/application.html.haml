@@ -10,7 +10,7 @@
     :javascript
       RailsAdmin.I18n.init("#{I18n.locale}", JSON.parse("#{j I18n.t("admin.js").to_json}"))
   %body.rails_admin
-    #loading.label.label-warning.body-rails-admin = t "admin.loading"
+    #loading.label.label-warning.body-rails-admin= t "admin.loading"
     %nav.navbar.navbar-default.navbar-fixed-top
       = render "layouts/rails_admin/navigation"
     .container-fluid

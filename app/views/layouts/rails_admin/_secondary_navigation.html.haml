@@ -4,9 +4,10 @@
       - Settings.languages.each do |_, val|
         = link_to params.merge(local: val), id: val do
           = image_tag val, size: Settings.flag_size
-  %li= link_to t("admin.header.course"), index_path("course")
-  %li= link_to t("admin.header.subject"), index_path("subject")
-  %li= link_to t("admin.header.user"), index_path("user")
+  - if _current_user.supervisor?
+    %li= link_to t("admin.header.course"), index_path("course")
+    %li= link_to t("admin.header.subject"), index_path("subject")
+    %li= link_to t("admin.header.user"), index_path("user") 
   - if _current_user
     %li.dropdown
       %a.dropdown-toggle{"aria-expanded": "false", "aria-haspopup": "true", "data-toggle": "dropdown", href: "#", role: "button"}

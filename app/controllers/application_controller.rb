@@ -17,7 +17,13 @@ class ApplicationController < ActionController::Base
 
   private
   def after_sign_in_path_for user
-    user.trainee? ? root_path : rails_admin_path
+    if user.trainee?
+      root_path
+    elsif user.admin?
+      rails_admin.index_path User
+    else
+      rails_admin_path
+    end
   end
 
   def set_locale
