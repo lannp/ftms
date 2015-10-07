@@ -33,7 +33,7 @@ $(document).on("ready", function() {
             complete: function(request){
               $("#course_subjects").effect("highlight");
             },
-            url: "order_subjects_in_course"
+            url: link
           })
           location.reload();
         });
